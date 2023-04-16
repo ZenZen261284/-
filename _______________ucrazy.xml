@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite>
+	<id>S5</id>
+	<name>Master</name>
+	<description></description>
+	<sections>
+		<section>
+		<name>Главная страница</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>FE</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Хедер</name>
+		<description></description>
+										<sections>
+		<section>
+		<name>Логотип</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C35</id>
+				<title>Проверка наличия логотипа</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу сайта </preconds>
+										<steps>Проверить наличие логотипа
+ 
+</steps>
+										<expected>Логотип отображается
+ 
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C36</id>
+				<title>Проверка кнопки логотипа</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на любую вкладку сайта</preconds>
+										<steps>Нажать кнопку логотипа</steps>
+										<expected>При нажатии на кнопку логотипа пользователь возвращается на главную страницу сайта</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Строка поиска</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C37</id>
+				<title>Ввод пустого значения</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу</preconds>
+										<steps>Оставить поле поиска пустое и выполнить поиск</steps>
+										<expected>Поиск не выполнен </expected>
+									</custom>
+							</case>
+															<case>
+				<id>C38</id>
+				<title>Ввод значения, удовлетворяющего критериям (&quot;счастливый сценарий&quot;)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу сайта</preconds>
+										<steps>Ввод запроса поиска</steps>
+										<expected>Поиск выполнен, отображаются результаты поиска</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C39</id>
+				<title>Ввод максимальной длины или максимального значения</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу</preconds>
+										<steps>Ввод максимально длинного значения</steps>
+										<expected>Ошибка ограничения ввода значений</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C40</id>
+				<title>Ввод минимальной длины или минимального значения</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу</preconds>
+										<steps>Ввод минимальной длины значения</steps>
+										<expected>Ошибка вода минимальных значений</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Поле ввода логина и пароля</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C41</id>
+				<title>Проверка корректности ввода логина и пароля в окне авторизации</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Главная страница сайта ![](index.php?/attachments/get/723f0231-e6dc-42eb-bdbf-99d3abe1a1dc) </preconds>
+										<steps>1. В поле «Логин» ввести имя пользователя (валидное)
+2. В поле «Пароль» ввести пароль пользователя (валидное)
+3. Нажать кнопку вход
+
+4. В поле «Логин» ввести имя пользователя (невалидное)
+5. В поле «Пароль» ввести пароль пользователя (валидное)
+6. Нажать кнопку вход
+
+7. В поле «Логин» ввести имя пользователя (невалидное)
+8. В поле «Пароль» ввести пароль пользователя (невалидное)
+9. Нажать кнопку вход
+
+
+
+
+ 
+</steps>
+										<expected>1. Выполнена валидация логина
+2. Выполнена валидация пароля
+3. Авторизация успешна, пользователю доступен личный кабинет
+
+4. Выводится сообщение «Вы ввели неверное имя пользователя», поле для логина очищается, окно авторизации остается активным
+5. Выполнена валидация пароля
+6. Вход не выполнен ошибка ввода поля &quot;Логин&quot;
+
+7. Выводится сообщение «Вы ввели неверное имя пользователя», поле для логина очищается, окно авторизации остается активным
+8. выводится сообщение «Вы ввели неверный пароль», поле для пароля очищается, окно авторизации остается активным
+9. Вход не выполнен ошибка ввода поля &quot;Логин&quot; и &quot;Пароль&quot;
+
+</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C42</id>
+				<title>Ввод пустого значения</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу</preconds>
+										<steps>Оставить поле поиска пустое и выполнить поиск</steps>
+										<expected>Поиск не выполнен</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C43</id>
+				<title>Ввод значения, удовлетворяющего критериям (&quot;счастливый сценарий&quot;)</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C44</id>
+				<title>Ввод максимальной длины или максимального значения</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу
+
+
+</preconds>
+										<steps>Ввод максимально длинного значения</steps>
+										<expected>Ошибка ограничения ввода значений</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C45</id>
+				<title>Ввод минимальной длины или минимального значения</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу
+
+</preconds>
+										<steps>Ввод минимальной длины значения</steps>
+										<expected>Ошибка вода минимальных значений</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C46</id>
+				<title>Проверка скрытия отображения пароля астерисками</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Зайти на главную страницу сайта </preconds>
+										<steps>1.Ввести пароль
+2. Проверить возможность снятия астерисков для проверки правильности ввода пароля</steps>
+										<expected>1. Пароль закрывается астерисками
+2. Астериски отключаются, пароль видно</expected>
+									</custom>
+							</case>
+															<case>
+				<id>C47</id>
+				<title>Обязательность заполнения поля</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Главная страница </preconds>
+										<steps>1.Ввод логина без заполнения поля пароль
+2.Ввод пароля без заполнения поля логин</steps>
+										<expected>1. Ошибка об отсутствии заполненного поля пароль
+1. Ошибка об отсутствии заполненного поля логин
+</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Кнопка входа</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C48</id>
+				<title>Данные отправляются на API</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+										<preconds>Главная страница сайта. Ввести логин и пароль.</preconds>
+										<steps>Нажать на кнопку входа ![](index.php?/attachments/get/a7a00c31-bed9-42d7-b29a-ce788e8b6bde)  </steps>
+										<expected>Данные отправляются на API</expected>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Кнопка регистрации</name>
+		<description></description>
+						<cases>
+												<case>
+				<id>C49</id>
+				<title>Проверка подчеркивания кнопки</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C50</id>
+				<title>Проверка всплывающего окна</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C51</id>
+				<title>Проверка перехода на вкладку регистрации</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C52</id>
+				<title>Пользовательское соглашение</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C53</id>
+				<title>Форма регистрации пользователя</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C54</id>
+				<title>Проверка ввода логина и пароля</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+															<case>
+				<id>C55</id>
+				<title>Проверка работы reCaptcha</title>
+												<template>Test Case (Text)</template>
+																<type>Other</type>
+																<priority>Medium</priority>
+																				<estimate></estimate>
+																								<references></references>
+																				<custom>
+										<automation_type><id>0</id><value> None</value></automation_type>
+									</custom>
+							</case>
+								</cases>
+							</section>
+			<section>
+		<name>Кнопка восстановления пароля</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Главная&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Лучшее&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Инкубатор&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Скидки&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Добавить пост&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Пользователи&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Проверка таба &quot;Предложения&quot;</name>
+		<description></description>
+									</section>
+			<section>
+		<name>Блок прогноза погоды</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+	</sections>
+			</section>
+			<section>
+		<name>BE</name>
+		<description></description>
+									</section>
+	</sections>
+			</section>
+	</sections>
+</suite>
